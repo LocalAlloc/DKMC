@@ -1,4 +1,4 @@
-from module import ModuleObject
+from module import module
 import os
 import re
 
@@ -15,6 +15,6 @@ class ShellcodeModule(ModuleObject):
     def run_action(self):
         if os.path.exists(self.vars["source"][0]):
             self.ui.print_msg("Shellcode:")
-            print "\\x" + "\\x".join(re.findall("..", open(self.vars["source"][0], "rb").read().encode("hex")))
+            print ("\\x" + "\\x".join(re.findall("..", open(self.vars["source"][0], "rb").read().encode("hex")))
         else:
             self.ui.print_error("%s not found" % self.vars["source"][0])

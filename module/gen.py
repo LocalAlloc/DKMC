@@ -1,4 +1,4 @@
-from module import ModuleObject
+from module import module
 import struct
 import random
 import time

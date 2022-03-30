@@ -11,26 +11,26 @@ class ModuleObject:
         self.ui.clearscreen()
         line = "=" * (len(self.description) + 4)
         emptyline = "|" + " " * (len(self.description) + 2) + "|\n"
-        print "\n\n\033[33m" + line + "\n" + emptyline + "| " + self.description + " |\n" + emptyline + line + "\033[00m\n\n"
-        print "Allowed options:\n"
+        print ("\n\n\033[33m" + line + "\n" + emptyline + "| " + self.description + " |\n" + emptyline + line + "\033[00m\n\n")
+        print ("Allowed options:\n")
         self.show_allowed()
-        print "\nModule Variables description:\n"
+        print ("\nModule Variables description:\n")
         self.show_description()
-        print "\n\nCurrent variable value:\n"
+        print ("\n\nCurrent variable value:\n")
         self.show_vars()
         self.do_action()
         
     def show_allowed(self):
         for cmd in self.allowed:
-            print "\t[*] (%s)\t%s" % cmd
+            print ("\t[*] (%s)\t%s" % cmd)
         
     def show_description(self):
         for key in self.vars.keys():
-            print "\t" + key + " " * (12 - len(key)) + self.vars[key][1]        
+            print ("\t" + key + " " * (12 - len(key)) + self.vars[key][1])
         
     def show_vars(self):
         for key in self.vars.keys():
-            print "\t" + key + " " * (12 - len(key)) + "= " + self.vars[key][0] 
+            print ("\t" + key + " " * (12 - len(key)) + "= " + self.vars[key][0] )
             
     def do_action(self):
         exit_module = False

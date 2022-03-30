@@ -44,6 +44,6 @@ if __name__ == "__main__":
             else:
                 error = "%s is not a valid option" % choice
         except KeyboardInterrupt:
-            print ""
+            print ("")
             ui.print_error("Exiting")
             exit(0)
